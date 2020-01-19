@@ -27,6 +27,7 @@ dependencies {
     implementation group: 'com.zopim.android', name: 'sdk', version: '1.4.8'
     implementation group: 'com.zendesk', name: 'support', version: '2.3.1'
     implementation group: 'com.zendesk', name: 'answerbot', version: '1.0.0'
+    //version 1.0.1 of the answerbot sdk causes version 2.3.1 of the support sdk to break
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
