@@ -10,6 +10,8 @@ import android.widget.Button;
 import com.zopim.android.sdk.api.ZopimChat;
 import com.zopim.android.sdk.prechat.ZopimChatActivity;
 
+import zendesk.answerbot.AnswerBot;
+import zendesk.answerbot.AnswerBotActivity;
 import zendesk.core.AnonymousIdentity;
 import zendesk.core.Identity;
 import zendesk.core.Zendesk;
@@ -52,5 +54,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        AnswerBot.INSTANCE.init(Zendesk.INSTANCE, Support.INSTANCE);
+
+        Button answerBotButton = (Button) findViewById(R.id.answer_bot_button);
+        answerBotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                AnswerBotActivity.builder()
+                        .show(MainActivity.this);
+            }
+        });
     }
 }
